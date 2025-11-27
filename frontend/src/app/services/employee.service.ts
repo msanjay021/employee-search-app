@@ -19,10 +19,10 @@ export class EmployeeService {
     phone?: string;
   }): Observable<Employee[]> {
     let params = new HttpParams();
-    if (query.firstName) params = params.set('firstName_like', query.firstName);
-    if (query.lastName) params = params.set('lastName_like', query.lastName);
-    if (query.position) params = params.set('position_like', query.position);
-    if (query.phone) params = params.set('phoneNumbers_like', query.phone);
+    if (query.firstName) params = params.set('firstName', query.firstName);
+    if (query.lastName) params = params.set('lastName', query.lastName);
+    if (query.position) params = params.set('position', query.position);
+    if (query.phone) params = params.set('phoneNumbers', query.phone);
 
     return this.http.get<Employee[]>(`${this.baseUrl}/employees`, { params });
   }
