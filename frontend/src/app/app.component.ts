@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
+import { SearchPanelComponent } from './components/search-panel/search-panel.component';
+import { ResultsTableComponent } from './components/results-table/results-table.component';
 import { Employee } from './models/employee.model';
 import { EmployeeService } from './services/employee.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  standalone: true,
+  imports: [CommonModule, SearchPanelComponent, ResultsTableComponent],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   employees: Employee[] = [];
@@ -12,8 +18,10 @@ export class AppComponent {
   constructor(private empService: EmployeeService) {}
 
   handleSearch(query: any) {
-    // If all fields are empty -> get all
-    const hasAny = Object.values(query || {}).some(v => v && v.toString().trim().length > 0);
+    const hasAny = Object.values(query || {}).some(
+      v => v && v.toString().trim().length > 0
+    );
+
     if (!hasAny) {
       this.empService.getAll().subscribe(list => this.employees = list);
       return;
@@ -23,7 +31,6 @@ export class AppComponent {
   }
 
   ngOnInit() {
-    // load all initially
     this.empService.getAll().subscribe(list => this.employees = list);
   }
 }

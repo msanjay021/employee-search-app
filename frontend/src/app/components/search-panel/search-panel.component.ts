@@ -1,8 +1,10 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { ReactiveFormsModule, FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-search-panel',
+  standalone: true,
+  imports: [ReactiveFormsModule],
   templateUrl: './search-panel.component.html',
   styleUrls: ['./search-panel.component.css']
 })
