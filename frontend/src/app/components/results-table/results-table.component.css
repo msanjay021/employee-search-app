@@ -1,3 +1,39 @@
-.results table { width: 100%; border-collapse: collapse; }
-.results th, .results td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-.results thead { background: #f6f6f6; }
+.results table {
+    width: 100%;
+    border-collapse: collapse;
+    /* Remove outer border as table headers/rows will handle it */
+}
+
+.results th, .results td {
+    border: none; /* Remove inner border lines */
+    padding: 12px 15px; /* More vertical padding */
+    text-align: left;
+}
+
+.results thead {
+    background-color: #007bff; /* Primary Blue Header */
+    color: white;
+}
+
+.results th {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #0056b3; /* Darker line under header */
+}
+
+/* Striped rows for better readability */
+.results tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Hover effect on rows */
+.results tr:hover {
+    background-color: #e2f4ff;
+    cursor: default;
+}
+
+/* Ensure the bottom of the table looks clean */
+.results tr:last-child td {
+    border-bottom: 1px solid #ccc;
+}

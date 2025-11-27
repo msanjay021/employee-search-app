@@ -1,6 +1,50 @@
-.search-panel { padding: 16px; border: 1px solid #ddd; margin-bottom: 12px; }
-.form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; align-items: end; }
-.actions { grid-column: span 2; display:flex; gap:8px; }
-input { width: 100%; padding: 6px; box-sizing: border-box; }
-label { font-size: 12px; color: #333; display:block; margin-bottom: 4px; }
-button { padding: 8px 12px; cursor: pointer; }
+.search-panel {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 24px;
+    border-radius: 8px; /* Soft rounded corners */
+    background-color: #ffffff; /* White panel background */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Lifted appearance */
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px; /* Increased gap for better spacing */
+    align-items: end;
+}
+
+/* Style for the container holding the label and input */
+.form-group {
+    /* Ensures labels and inputs stay together */
+}
+
+label {
+    font-size: 13px; /* Slightly larger, more readable font */
+    color: #555; /* Softer text color */
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+input {
+    width: 100%;
+    padding: 10px; /* Increased padding */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px; /* Matches button corners */
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #007bff; /* Highlight focus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle glow */
+}
+
+.actions {
+    grid-column: span 2;
+    display: flex;
+    gap: 12px;
+    padding-top: 10px; /* Space between inputs and buttons */
+}
