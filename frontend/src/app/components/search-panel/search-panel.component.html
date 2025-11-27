@@ -1,0 +1,24 @@
+<div class="search-panel">
+  <form (ngSubmit)="search()" [formGroup]="form" class="form-grid">
+    <div>
+      <label>First Name</label>
+      <input formControlName="firstName" placeholder="First name" />
+    </div>
+    <div>
+      <label>Last Name</label>
+      <input formControlName="lastName" placeholder="Last name" />
+    </div>
+    <div>
+      <label>Position</label>
+      <input formControlName="position" placeholder="Position" />
+    </div>
+    <div>
+      <label>Phone</label>
+      <input formControlName="phone" placeholder="Phone" />
+    </div>
+    <div class="actions">
+      <button type="submit">Search</button>
+      <button type="button" (click)="clear()">Clear</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,26 @@
+<div class="results">
+  <table *ngIf="employees?.length; else noResults">
+    <thead>
+      <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Position</th>
+        <th>Phone</th>
+        <th>City</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let e of employees">
+        <td>{{ e.firstName }}</td>
+        <td>{{ e.lastName }}</td>
+        <td>{{ e.position }}</td>
+        <td>{{ e.phoneNumbers?.[0] || '-' }}</td>
+        <td>{{ e.address?.city || '-' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #noResults>
+    <p>No results found.</p>
+  </ng-template>
+</div>
