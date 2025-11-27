@@ -19,16 +19,9 @@ export class AppComponent {
   constructor(private empService: EmployeeService) {}
 
   handleSearch(query: any) {
-    const hasAny = Object.values(query || {}).some(
-      v => v && v.toString().trim().length > 0
-    );
-
-    if (!hasAny) {
-      this.empService.getAll().subscribe(list => this.employees = list);
-      return;
-    }
-
-    this.empService.searchEmployees(query).subscribe(list => this.employees = list);
+    this.empService.searchEmployees(query).subscribe(list => {
+      this.employees = list;
+    });
   }
 
   ngOnInit() {
