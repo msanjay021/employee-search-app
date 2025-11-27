@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { Component } from '@angular/core';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 import { ResultsTableComponent } from './components/results-table/results-table.component';
@@ -8,7 +9,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, SearchPanelComponent, ResultsTableComponent],
+  imports: [CommonModule, ReactiveFormsModule, SearchPanelComponent, ResultsTableComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
